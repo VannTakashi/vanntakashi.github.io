@@ -1,0 +1,230 @@
+/* styles.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Video */
+#background-video {
+    position: fixed; /* Posisi tetap */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%; /* Lebar minimum = lebar layar */
+    min-height: 100%; /* Tinggi minimum = tinggi layar */
+    z-index: -1; /* Di belakang semua konten */
+    object-fit: cover; /* Penyesuaian otomatis */
+}
+
+/* Kontainer dengan konten */
+.container {
+    max-width: 600px;
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8); /* Latar belakang hitam transparan */
+    border-radius: 10px;
+    z-index: 1;
+}
+
+/* Tombol hamburger */
+.menu-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: #4285F4;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.menu-button:hover {
+    transform: scale(1.2);
+}
+
+/* Tombol ganti bahasa */
+.language-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.language-button img {
+    width: 30px;
+    height: 20px;
+}
+
+.language-button:hover {
+    transform: scale(1.2);
+}
+
+/* Avatar */
+.avatar {
+    margin-bottom: 2rem;
+}
+
+.avatar-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Avatar bulat */
+    object-fit: cover;
+    border: 3px solid #4285F4;
+}
+
+/* Judul dan deskripsi */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease forwards;
+}
+
+p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: fadeIn 1s ease 0.5s forwards;
+}
+
+/* Ikon sosial media */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.social-icon img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.social-icon img:hover {
+    transform: scale(1.2);
+}
+
+/* Menu samping */
+.side-menu {
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 300px;
+    background-color: rgba(0, 0, 0, 0.9); /* Latar belakang menu gelap */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: 2;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.side-menu.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.left-menu {
+    left: -300px; /* Awalnya tersembunyi */
+    transform: translateX(0); /* Muncul dari kiri */
+}
+
+.left-menu.active {
+    transform: translateX(300px); /* Ditampilkan */
+}
+
+.right-menu {
+    right: -300px; /* Awalnya tersembunyi */
+    transform: translateX(0); /* Muncul dari kanan */
+}
+
+.right-menu.active {
+    transform: translateX(-300px); /* Ditampilkan */
+}
+
+.side-menu h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.side-menu p {
+    font-size: 1rem;
+    text-align: center;
+}
+
+.side-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.side-menu li {
+    margin-bottom: 1rem;
+}
+
+.side-menu a {
+    color: #4285F4;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.side-menu a:hover {
+    color: #ffffff;
+}
+
+.project-button {
+    background-color: rgba(66, 133, 244, 0.7); /* Tombol transparan */
+    color: #ffffff;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: not-allowed;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.project-button:hover {
+    background-color: rgba(66, 133, 244, 1);
+    transform: scale(1.1);
+}
+
+/* Animasi */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
