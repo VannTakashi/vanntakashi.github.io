@@ -16,7 +16,7 @@ languageButton.addEventListener('click', () => {
         aboutMe.innerHTML = `
             Nama: Revan Andrean<br>
             Nama Panggilan: VannTakashi<br>
-            Usia: 17<br>
+            Usia: 18<br>
             Negara: Indonesia<br>
             Hobi? gatau<br>
             Channel: @epanntakaci
@@ -32,7 +32,7 @@ languageButton.addEventListener('click', () => {
         aboutMe.innerHTML = `
             Name: VannTakashi<br>
             Nickname: Revan Andrean<br>
-            Age: 17<br>
+            Age: 18<br>
             Country: Indonesia<br>
             my hobby? idk<br>
             Channel: @epanntakaci
